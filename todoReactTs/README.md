@@ -8,3 +8,5 @@ npx eslint --init
 
 
 npm install todomvc-app-css -E (la "E" para que ponga la version exacta)
+
+npm run dev
