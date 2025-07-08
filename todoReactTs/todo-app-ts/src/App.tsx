@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Todos } from './components/Todos';
 
 const mockTodos = [
@@ -21,6 +21,11 @@ const mockTodos = [
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState(mockTodos);
+
+  useEffect(() => {
+    document.body.classList.add('dark-mode');
+    // Si quieres volver a light, usa: document.body.classList.remove('dark-mode');
+  }, []);
 
   const handleRemove = (id: string) => {
     const newTodos = todos.filter(todo => todo.id !== id);
