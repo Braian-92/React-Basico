@@ -5,7 +5,7 @@ const mockTodos = [
   {
     id: '1',
     title: 'Learn React',
-    completed: false,
+    completed: true,
   },
   {
     id: '2',
@@ -23,7 +23,9 @@ const App: React.FC = () => {
   const [todos] = useState(mockTodos);
 
   return (
-    <Todos todos={todos} />
+    <div className="todoapp">
+      <Todos todos={todos} />
+    </div>
   )
 }
 
