@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Todos } from './components/Todos';
 import { type TodoId, type Todo as TodoType } from './types';
+import { TODO_FILTERS, type FilterValue } from './consts';
+import { Footer } from './components/Footer';
 
 const mockTodos = [
   {
@@ -22,6 +24,7 @@ const mockTodos = [
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState(mockTodos);
+  const [filterSelected, setFilterSelected] = useState<FilterValue>(TODO_FILTERS.ALL);
 
   useEffect(() => {
     document.body.classList.add('dark-mode');
@@ -45,12 +48,32 @@ const App: React.FC = () => {
     setTodos(newTodos);
   }
 
+  const handleFilterChange = (filter: FilterValue) => {
+    setFilterSelected(filter);
+  }
+
+  const activeCount = todos.filter(todo => !todo.completed).length;
+  const completedCount = todos.length - activeCount;
+
+  const filteredTodos = todos.filter(todo => {
+    if (filterSelected === TODO_FILTERS.ACTIVE) return !todo.completed;
+    if (filterSelected === TODO_FILTERS.COMPLETED) return todo.completed;
+    return true;
+  });
+
   return (
     <div className="todoapp">
       <Todos 
-        todos={todos} 
+        todos={filteredTodos} 
         onToggleCompleteTodo={handleCompleted}
         onRemoveTodo={handleRemove}
+      />
+      <Footer
+        activeCount={activeCount}
+        completedCount={completedCount}
+        filterSelected={filterSelected}
+        handleFilterChange={handleFilterChange}
+        onClearCompleted={() => {}}
       />
     </div>
   )
