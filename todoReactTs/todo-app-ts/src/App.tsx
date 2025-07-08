@@ -52,6 +52,11 @@ const App: React.FC = () => {
     setFilterSelected(filter);
   }
 
+  const handleClearCompleted = (): void => {
+    const newTodos = todos.filter(todo => !todo.completed);
+    setTodos(newTodos);
+  }
+
   const activeCount = todos.filter(todo => !todo.completed).length;
   const completedCount = todos.length - activeCount;
 
@@ -73,7 +78,7 @@ const App: React.FC = () => {
         completedCount={completedCount}
         filterSelected={filterSelected}
         handleFilterChange={handleFilterChange}
-        onClearCompleted={() => {}}
+        onClearCompleted={handleClearCompleted}
       />
     </div>
   )
