@@ -5,3 +5,6 @@ npm create vite@4.1.0
 npm install
 
 npm run dev
+
+
+SIGLA: hmr = hot module replacement (funcinalidad de vite que monitorea los archivos y recarga)
