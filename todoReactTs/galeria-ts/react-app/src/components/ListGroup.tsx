@@ -1,8 +1,11 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+interface Props { // interface es una estructura de datos que define el tipo de los datos que se van a pasar a la funcion
+  items: string[];
+  heading: string;
+}
 
+function ListGroup({ items, heading }: Props) {
   //! Hook estado
   const [selectedIndex, setSelectedIndex] = useState(-1);
   // arr[0] // variable (selectedIndex)
