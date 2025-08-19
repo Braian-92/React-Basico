@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// Importá cada tema como URL (Vite: ?url). Lista clásica compatible con 5.2.x
+// Importá cada tema como URL (Vite: ?url). Lista completa de temas disponibles
 import cerulean   from 'bootswatch/dist/cerulean/bootstrap.min.css?url';
 import cosmo      from 'bootswatch/dist/cosmo/bootstrap.min.css?url';
 import cyborg     from 'bootswatch/dist/cyborg/bootstrap.min.css?url';
@@ -12,7 +12,9 @@ import lumen      from 'bootswatch/dist/lumen/bootstrap.min.css?url';
 import lux        from 'bootswatch/dist/lux/bootstrap.min.css?url';
 import materia    from 'bootswatch/dist/materia/bootstrap.min.css?url';
 import minty      from 'bootswatch/dist/minty/bootstrap.min.css?url';
+import morph      from 'bootswatch/dist/morph/bootstrap.min.css?url';
 import pulse      from 'bootswatch/dist/pulse/bootstrap.min.css?url';
+import quartz     from 'bootswatch/dist/quartz/bootstrap.min.css?url';
 import sandstone  from 'bootswatch/dist/sandstone/bootstrap.min.css?url';
 import simplex    from 'bootswatch/dist/simplex/bootstrap.min.css?url';
 import sketchy    from 'bootswatch/dist/sketchy/bootstrap.min.css?url';
@@ -21,13 +23,15 @@ import solar      from 'bootswatch/dist/solar/bootstrap.min.css?url';
 import spacelab   from 'bootswatch/dist/spacelab/bootstrap.min.css?url';
 import superhero  from 'bootswatch/dist/superhero/bootstrap.min.css?url';
 import united     from 'bootswatch/dist/united/bootstrap.min.css?url';
+import vapor      from 'bootswatch/dist/vapor/bootstrap.min.css?url';
 import yeti       from 'bootswatch/dist/yeti/bootstrap.min.css?url';
+import zephyr     from 'bootswatch/dist/zephyr/bootstrap.min.css?url';
 
 // Mapa de temas -> URL
 const THEME_URL = {
   cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux,
-  materia, minty, pulse, sandstone, simplex, sketchy, slate, solar,
-  spacelab, superhero, united, yeti,
+  materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar,
+  spacelab, superhero, united, vapor, yeti, zephyr,
 } as const;
 
 type ThemeName = 'default' | keyof typeof THEME_URL;
