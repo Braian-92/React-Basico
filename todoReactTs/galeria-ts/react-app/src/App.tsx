@@ -1,5 +1,7 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
+// @ts-ignore
+import BootswatchSwitcher from './components/BootswatchSwitcher';
 
 function App(){
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -10,9 +12,10 @@ function App(){
   }
 
   return <div className="container my-2">
+    <BootswatchSwitcher defaultTheme="solar" />
     <Alert />
     <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-    <ListGroup items={items2} heading="Cities 2" onSelectItem={handleSelectItem} />
+    {/* <ListGroup items={items2} heading="Cities 2" onSelectItem={handleSelectItem} /> */}
   </div>;
 }
 
