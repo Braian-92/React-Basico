@@ -11,3 +11,6 @@ SIGLA: hmr = hot module replacement (funcinalidad de vite que monitorea los arch
 
 
 npm i bootstrap@5.2.3
+
+# instalar complemento #
+"ES7+ React/Redux/React-Native snippets" y permite crear funciones solo digitando "rafce"
