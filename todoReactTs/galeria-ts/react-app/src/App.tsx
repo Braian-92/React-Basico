@@ -12,8 +12,10 @@ function App(){
   }
 
   return <div className="container my-2">
-    <BootswatchSwitcher defaultTheme="vapor" />
-    <Alert />
+    <BootswatchSwitcher defaultTheme="vapor" /> {/* defaultTheme es el tema que se va a usar por defecto */}  
+    <Alert>
+      <span>Alerta personalizada</span>
+    </Alert>
     <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
     {/* <ListGroup items={items2} heading="Cities 2" onSelectItem={handleSelectItem} /> */}
   </div>;
