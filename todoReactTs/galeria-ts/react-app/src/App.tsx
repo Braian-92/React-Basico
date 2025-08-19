@@ -12,7 +12,7 @@ function App(){
   }
 
   return <div className="container my-2">
-    <BootswatchSwitcher defaultTheme="solar" />
+    <BootswatchSwitcher defaultTheme="vapor" />
     <Alert />
     <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
     {/* <ListGroup items={items2} heading="Cities 2" onSelectItem={handleSelectItem} /> */}
