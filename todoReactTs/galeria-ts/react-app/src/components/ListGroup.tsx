@@ -3,9 +3,10 @@ import { useState } from "react";
 interface Props { // interface es una estructura de datos que define el tipo de los datos que se van a pasar a la funcion
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   //! Hook estado
   const [selectedIndex, setSelectedIndex] = useState(-1);
   // arr[0] // variable (selectedIndex)
@@ -28,10 +29,10 @@ function ListGroup({ items, heading }: Props) {
   
   return ( 
     <>
-      <h1>ListGroup</h1>
+      <h1>{heading}</h1>
       {getMessage()}
       <ul className="list-group">
-        {items.map((item, index) => <li className={selectedIndex === index ? "list-group-item active" : "list-group-item"} key={item} onClick={() => setSelectedIndex(index)}>{item}</li>)}
+        {items.map((item, index) => <li className={selectedIndex === index ? "list-group-item active" : "list-group-item"} key={item} onClick={() => {setSelectedIndex(index); onSelectItem(item);}}>{item}</li>)}
       </ul>
     </>
   );
