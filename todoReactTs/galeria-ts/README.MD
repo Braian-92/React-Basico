@@ -8,3 +8,6 @@ npm run dev
 
 
 SIGLA: hmr = hot module replacement (funcinalidad de vite que monitorea los archivos y recarga)
+
+
+npm i bootstrap@5.2.3
