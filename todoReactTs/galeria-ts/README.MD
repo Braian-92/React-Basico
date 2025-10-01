@@ -17,3 +17,6 @@ npm i bootswatch@5.2.3
 
 # instalar complemento #
 "ES7+ React/Redux/React-Native snippets" y permite crear funciones solo digitando "rafce"
+
+
+instalar "react developer tools" en chrome
